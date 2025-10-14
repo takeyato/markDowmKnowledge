@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ナレッジ検索</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .section-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .bi {
+      margin-right: 0.5rem;
+    }
+    .badge {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- カテゴリタブ（検索バーの上） -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-12">
+      <h2 class="text-center mb-4"><i class="bi bi-search"></i>ナレッジ検索</h1>
+
+
+
+      <!-- 検索バー -->
+      <div class="input-group">
+
+        <select class="form-select">
+          <option selected>すべて</option>
+          <option value="tech">技術</option>
+          <option value="manual">業務マニュアル</option>
+          <option value="faq">FAQ</option>
+          <option value="policy">社内制度</option>
+        </select>
+
+        <input type="text" class="form-control w-75" placeholder="キーワードを入力..." aria-label="Search">
+        <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- お気に入り & 人気記事 -->
+    <div class="row">
+      <!-- お気に入り -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="section-title"><i class="bi bi-star-fill text-warning"></i>お気に入り記事</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Markdownの書き方まとめ</a></li>
+              <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Linux GUI復旧手順</a></li>
+              <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>TASCAMルーティング設定</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 人気記事 -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="section-title"><i class="bi bi-fire text-danger"></i>人気記事ランキング</div>
+
+            <!-- 期間切り替えタブ -->
+            <ul class="nav nav-tabs mb-3" id="rankingTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="daily-tab" data-bs-toggle="tab" data-bs-target="#daily" type="button" role="tab">日間</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="weekly-tab" data-bs-toggle="tab" data-bs-target="#weekly" type="button" role="tab">週間</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab">月間</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly" type="button" role="tab">年間</button>
+              </li>
+            </ul>
+
+            <!-- タブコンテンツ -->
+            <div class="tab-content" id="rankingContent">
+              <div class="tab-pane fade show active" id="daily" role="tabpanel">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Markdownの書き方まとめ</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Linux GUI復旧手順</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>仮想通貨での国際送金ガイド</a></li>
+                </ol>
+              </div>
+              <div class="tab-pane fade" id="weekly" role="tabpanel">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>最軽量ROMの比較レビュー</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Androidリソースの再定義テクニック</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Dockerネットワークの可視化</a></li>
+                </ol>
+              </div>
+              <div class="tab-pane fade" id="monthly" role="tabpanel">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>React vs Vueの設計思想</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Markdownで作る社内Wiki</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>PostgreSQLの高速化Tips</a></li>
+                </ol>
+              </div>
+              <div class="tab-pane fade" id="yearly" role="tabpanel">
+                <ol class="list-group list-group-numbered list-group-flush">
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>AIによるナレッジ管理の未来</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>Bootstrap 5で作る社内ポータル</a></li>
+                  <li class="list-group-item"><a href="#"><i class="bi bi-file-earmark-text"></i>セキュリティ設計の基本原則</a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
